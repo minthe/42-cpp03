@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:53:27 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/11 21:37:25 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/12 14:50:11 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ class ClapTrap {
 		unsigned int	_health;
 		unsigned int	_energy;
 		unsigned int	_attack;
+		int				_instance;
+		static	int		_nbInstance;
 
 };
 
