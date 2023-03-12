@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:56:38 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 17:02:47 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/12 17:29:48 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& rhs)
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
-		this->_health = 100;
-		this->_energy = 50;
-		this->_attack = 20;
+		this->_health = rhs._health;
+		this->_energy = rhs._energy;
+		this->_attack = rhs._attack;
 	}
 	std::cout << "\tScavTrap Copy Assigment Constructor called" << std::endl;
 	return *this;
