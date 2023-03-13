@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:56:38 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/13 11:54:49 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 13:09:45 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 // CONSTRUCTORS
 
-ScavTrap::ScavTrap() : ClapTrap("ScavTrap")
+ScavTrap::ScavTrap() : ClapTrap("NoName")
 {
 	this->_health = 100;
 	this->_energy = 50;
 	this->_attack = 20;
-	std::cout << "\tScavTrap Default Constructor called" << std::endl;
+	std::cout << "\t[ScavTrap] Default Constructor called" << std::endl;
 	return;
 }
 
@@ -30,20 +30,20 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name) // explicitly calling a no
 	this->_health = 100;
 	this->_energy = 50;
 	this->_attack = 20;
-	std::cout << "\tScavTrap String Constructor called" << std::endl;
+	std::cout << "\t[ScavTrap] String Constructor called" << std::endl;
 	return;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "\tScavTrap Deconstructor called" << std::endl;
+	std::cout << "\t[ScavTrap] Deconstructor called" << std::endl;
 	return;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src)
 {
 	*this = src;
-	std::cout << "\tScavTrap Copy Constructor called" << std::endl;
+	std::cout << "\t[ScavTrap] Copy Constructor called" << std::endl;
 	return;
 }
 
@@ -56,7 +56,7 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& rhs)
 		this->_energy = rhs._energy;
 		this->_attack = rhs._attack;
 	}
-	std::cout << "\tScavTrap Copy Assigment Constructor called" << std::endl;
+	std::cout << "\t[ScavTrap] Copy Assigment Constructor called" << std::endl;
 	return *this;
 }
 
@@ -68,7 +68,7 @@ void	ScavTrap::attack(const std::string& target)
 	{
 		this->_energy--;
 		std::cout
-			<< "ScavTrap "
+			<< "[ScavTrap] "
 			<< this->_name
 			<< " attacks " << target
 			<< ", causing " << this->_attack
@@ -77,7 +77,7 @@ void	ScavTrap::attack(const std::string& target)
 		return;
 	}
 	std::cout
-		<< "ScavTrap "
+		<< "[ScavTrap] "
 		<< this->_name
 		<< " has not enough power to attack." << std::endl;
 	return;
@@ -85,6 +85,10 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
+	std::cout
+		<< "[ScavTrap] "
+		<< this->_name
+		<< " is now in Gate keeper mode."
+	<< std::endl;
 	return;
 }
