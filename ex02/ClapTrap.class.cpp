@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:53:29 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 16:52:39 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:53:57 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,9 +73,9 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& rhs)
 			<< this->_name
 		<< std::endl;
 		this->_name = rhs._name;
-		this->_health = 10;
-		this->_energy = 10;
-		this->_attack = 0;
+		this->_health = rhs._health;
+		this->_energy = rhs._energy;
+		this->_attack = rhs._attack;
 	}
 	else
 		std::cout << "\t\tClapTrap Copy Assigment Constructor called" << std::endl;
