@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:53:29 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/13 12:47:46 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 12:38:06 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,11 @@ int	ClapTrap::getEnergy() const
 int	ClapTrap::getAttack() const
 {
 	return this->_attack;
+}
+
+std::string	ClapTrap::getName() const
+{
+	return (this->_name);
 }
 
 // STATIC

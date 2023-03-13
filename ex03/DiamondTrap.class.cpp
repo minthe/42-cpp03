@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 17:57:18 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/13 13:08:28 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 12:37:29 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ DiamondTrap::~DiamondTrap()
 	return;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap& src)
+DiamondTrap::DiamondTrap(const DiamondTrap& src) : ClapTrap(src._name), FragTrap(), ScavTrap()
 {
 	*this = src;
 	std::cout << "\tDiamondTrap Copy Constructor called" << std::endl;
@@ -63,7 +63,7 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& rhs)
 
 // FUNCTIONS
 
-void	DiamondTrap::whoAmI()
+void		DiamondTrap::whoAmI()
 {
 	std::cout
 		<< "I am: "

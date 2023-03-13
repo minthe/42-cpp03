@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:56:38 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/13 13:09:18 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 12:29:54 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ ScavTrap::~ScavTrap()
 	return;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& src)
+ScavTrap::ScavTrap(const ScavTrap& src) : ClapTrap(src._name)
 {
 	*this = src;
 	std::cout << "\t\t[ScavTrap] Copy Constructor called" << std::endl;
