@@ -6,30 +6,31 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 17:57:18 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 18:01:17 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:21:50 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ClapTrap.class.hpp"
-#include "FragTrap.class.hpp"
-#include "ScavTrap.class.hpp"
 #include "DiamondTrap.class.hpp"
 
 // CONSTRUCTORS
 
-DiamondTrap::DiamondTrap() : ClapTrap("DiamondTrap")
+DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap(), _name("DiamondTrap")
 {
-	this->_health = FragTrap::_health;
+	ClapTrap::_name = this->_name + "_clap_name";
+	this->_health = FragTrap::_health_frag;
+	this->_energy = ScavTrap::_energy_scav;
+	this->_attack = FragTrap::_attack_frag;
 	std::cout << "\tDiamondTrap Default Constructor called" << std::endl;
 	return;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name) // explicitly calling a non default constructor of base class
+DiamondTrap::DiamondTrap(std::string name) : _name(name) // explicitly calling a non default constructor of base class
 {
-	this->_health = 100;
-	this->_energy = 100;
-	this->_attack = 30;
+	ClapTrap::_name = this->_name + "_clap_name";
+	this->_health = FragTrap::_health_frag;
+	this->_energy = ScavTrap::_energy_scav;
+	this->_attack = FragTrap::_attack_frag;
 	std::cout << "\tDiamondTrap String Constructor called" << std::endl;
 	return;
 }
@@ -58,4 +59,17 @@ DiamondTrap&	DiamondTrap::operator=(const DiamondTrap& rhs)
 	}
 	std::cout << "\tDiamondTrap Copy Assigment Constructor called" << std::endl;
 	return *this;
+}
+
+// FUNCTIONS
+
+void	DiamondTrap::whoAmI()
+{
+	std::cout
+		<< "I am: "
+		<< this->_name
+		<< " , "
+		<< ClapTrap::_name
+	<< std::endl;
+	return;
 }

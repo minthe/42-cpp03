@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:53:27 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 16:39:35 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:09:31 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ class ClapTrap {
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+		int		getHealth() const;
+		int		getEnergy() const;
+		int		getAttack() const;
 
 	protected:
 

@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 12:53:29 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 16:52:39 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:49:12 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ ClapTrap::ClapTrap() : _name("ClapTrap"), _health(10), _energy(10), _attack(0)
 {
 	this->_instance = ++_nbInstance;
 	std::cout
-		<< "\t\tDefault Constructor called for: "
+		<< "\t\t\tDefault Constructor called for: "
 		<< this->_name
 		<< " (#"
 		<< this->_instance
@@ -31,7 +31,7 @@ ClapTrap::ClapTrap() : _name("ClapTrap"), _health(10), _energy(10), _attack(0)
 ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _attack(0)
 {
 	std::cout
-		<< "\t\tClapTrap Regular Constructor called for: "
+		<< "\t\t\tClapTrap Regular Constructor called for: "
 		<< this->_name
 	<< std::endl;
 	this->_instance = ++_nbInstance;
@@ -41,7 +41,7 @@ ClapTrap::ClapTrap(std::string name) : _name(name), _health(10), _energy(10), _a
 ClapTrap::~ClapTrap()
 {
 	std::cout
-		<< "\t\t ClapTrap Deconstructor called for: "
+		<< "\t\t\t ClapTrap Deconstructor called for: "
 		<< this->_name
 		<< " (#"
 		<< this->_instance
@@ -53,7 +53,7 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(const ClapTrap& src)
 {
 	std::cout
-		<< "\t\tClapTrap Copy Constructor called with: "
+		<< "\t\t\tClapTrap Copy Constructor called with: "
 		<< src._name
 		<< " replacing: "
 		<< this->_name
@@ -67,18 +67,18 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& rhs)
 	if (this != &rhs)
 	{
 		std::cout
-			<< "\t\tClapTrap Copy Assigment Constructor called with: "
+			<< "\t\t\tClapTrap Copy Assigment Constructor called with: "
 			<< rhs._name
 			<< " replacing: "
 			<< this->_name
 		<< std::endl;
 		this->_name = rhs._name;
-		this->_health = 10;
-		this->_energy = 10;
-		this->_attack = 0;
+		this->_health = rhs._health;
+		this->_energy = rhs._energy;
+		this->_attack = rhs._attack;
 	}
 	else
-		std::cout << "\t\tClapTrap Copy Assigment Constructor called" << std::endl;
+		std::cout << "\t\t\tClapTrap Copy Assigment Constructor called" << std::endl;
 	return *this;
 }
 
@@ -134,6 +134,21 @@ void	ClapTrap::beRepaired(unsigned int amount)
 		<< " has not enough power to be repaired."
 	<< std::endl;
 	return;
+}
+
+int	ClapTrap::getHealth() const
+{
+	return this->_health;
+}
+
+int	ClapTrap::getEnergy() const
+{
+	return this->_energy;
+}
+
+int	ClapTrap::getAttack() const
+{
+	return this->_attack;
 }
 
 // STATIC

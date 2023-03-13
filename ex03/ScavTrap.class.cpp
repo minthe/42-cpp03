@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:56:38 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 17:35:30 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:16:25 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,34 @@
 
 // CONSTRUCTORS
 
-ScavTrap::ScavTrap() : ClapTrap("ScavTrap")
+ScavTrap::ScavTrap() : ClapTrap()
 {
-	this->_health = 100;
-	this->_energy = 50;
-	this->_attack = 20;
-	std::cout << "\tScavTrap Default Constructor called" << std::endl;
+	this->_health = _health_scav;
+	this->_energy = _energy_scav;
+	this->_attack = _attack_scav;
+	std::cout << "\t\tScavTrap Default Constructor called" << std::endl;
 	return;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) // explicitly calling a non default constructor of base class
 {
-	this->_health = 100;
-	this->_energy = 50;
-	this->_attack = 20;
-	std::cout << "\tScavTrap String Constructor called" << std::endl;
+	this->_health = _health_scav;
+	this->_energy = _energy_scav;
+	this->_attack = _attack_scav;
+	std::cout << "\t\tScavTrap String Constructor called" << std::endl;
 	return;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "\tScavTrap Deconstructor called" << std::endl;
+	std::cout << "\t\tScavTrap Deconstructor called" << std::endl;
 	return;
 }
 
 ScavTrap::ScavTrap(const ScavTrap& src)
 {
 	*this = src;
-	std::cout << "\tScavTrap Copy Constructor called" << std::endl;
+	std::cout << "\t\tScavTrap Copy Constructor called" << std::endl;
 	return;
 }
 
@@ -52,11 +52,11 @@ ScavTrap&	ScavTrap::operator=(const ScavTrap& rhs)
 	if (this != &rhs)
 	{
 		this->_name = rhs._name;
-		this->_health = 100;
-		this->_energy = 50;
-		this->_attack = 20;
+		this->_health = rhs._health;
+		this->_energy = rhs._energy;
+		this->_attack = rhs._attack;
 	}
-	std::cout << "\tScavTrap Copy Assigment Constructor called" << std::endl;
+	std::cout << "\t\tScavTrap Copy Assigment Constructor called" << std::endl;
 	return *this;
 }
 
@@ -88,3 +88,9 @@ void	ScavTrap::guardGate()
 	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
 	return;
 }
+
+// STATIC
+
+const int ScavTrap::_health_scav = 100;
+const int ScavTrap::_energy_scav = 50;
+const int ScavTrap::_attack_scav = 20;

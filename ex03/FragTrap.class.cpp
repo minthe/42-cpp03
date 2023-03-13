@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:56:38 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 17:38:35 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 09:22:40 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,34 @@
 
 // CONSTRUCTORS
 
-FragTrap::FragTrap() : ClapTrap("FragTrap")
+FragTrap::FragTrap() : ClapTrap()
 {
-	this->_health = 100;
-	this->_energy = 100;
-	this->_attack = 30;
-	std::cout << "\tFragTrap Default Constructor called" << std::endl;
+	this->_health = _health_frag;
+	this->_energy = _energy_frag;
+	this->_attack = _attack_frag;
+	std::cout << "\t\tFragTrap Default Constructor called" << std::endl;
 	return;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name) // explicitly calling a non default constructor of base class
 {
-	this->_health = 100;
-	this->_energy = 100;
-	this->_attack = 30;
-	std::cout << "\tFragTrap String Constructor called" << std::endl;
+	this->_health = _health_frag;
+	this->_energy = _energy_frag;
+	this->_attack = _attack_frag;
+	std::cout << "\t\tFragTrap String Constructor called" << std::endl;
 	return;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "\tFragTrap Deconstructor called" << std::endl;
+	std::cout << "\t\tFragTrap Deconstructor called" << std::endl;
 	return;
 }
 
 FragTrap::FragTrap(const FragTrap& src)
 {
 	*this = src;
-	std::cout << "\tFragTrap Copy Constructor called" << std::endl;
+	std::cout << "\t\tFragTrap Copy Constructor called" << std::endl;
 	return;
 }
 
@@ -56,11 +56,20 @@ FragTrap&	FragTrap::operator=(const FragTrap& rhs)
 		this->_energy = rhs._energy;
 		this->_attack = rhs._attack;
 	}
-	std::cout << "\tFragTrap Copy Assigment Constructor called" << std::endl;
+	std::cout << "\t\tFragTrap Copy Assigment Constructor called" << std::endl;
 	return *this;
 }
 
 // FUNCTIONS
+
+void	FragTrap::highFivesGuys()
+{
+	std::cout
+		<< "HI FIVE! from: "
+		<< this->_name
+	<< std::endl;
+	return;
+}
 
 void	FragTrap::attack(const std::string& target)
 {
@@ -83,11 +92,8 @@ void	FragTrap::attack(const std::string& target)
 	return;
 }
 
-void	FragTrap::highFivesGuys()
-{
-	std::cout
-		<< "HI FIVE! from: "
-		<< this->_name
-	<< std::endl;
-	return;
-}
+// STATIC
+
+const int	FragTrap::_health_frag = 100;
+const int	FragTrap::_energy_frag = 100;
+const int	FragTrap::_attack_frag = 30;

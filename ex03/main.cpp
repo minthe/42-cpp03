@@ -6,28 +6,27 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:48:12 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/12 17:32:25 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 11:46:56 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "ClapTrap.class.hpp"
-#include "ScavTrap.class.hpp"
-#include "FragTrap.class.hpp"
+#include "DiamondTrap.class.hpp"
 
 int	main()
 {
-	ScavTrap	Foo;
-	ScavTrap	Boo("Boo");
-	FragTrap	Frag;
-	FragTrap	Frag2;
+	DiamondTrap	Diamond("Di");
+	DiamondTrap Diamond2;
+	ClapTrap Clap;
 
-	Boo.attack("Frag2");
-	Frag2.takeDamage(100);
-	Frag = Frag2;
-	Frag.attack("Boo");
-	Foo.guardGate();
-	Frag.highFivesGuys();
-
+	Clap.attack("Di");
+	Diamond.whoAmI();
+	Diamond2.whoAmI();
+	std::cout
+		<< "Health: " << Diamond.getHealth()
+		<< " Energy: " << Diamond.getEnergy()
+		<< " Attack: " << Diamond.getAttack()
+		<< std::endl;
+	Diamond.ScavTrap::attack("Boo");
 	return 0;
 }
