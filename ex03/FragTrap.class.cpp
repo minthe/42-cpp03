@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 15:56:38 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/13 09:22:40 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 12:44:33 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ FragTrap::FragTrap() : ClapTrap()
 	this->_health = _health_frag;
 	this->_energy = _energy_frag;
 	this->_attack = _attack_frag;
-	std::cout << "\t\tFragTrap Default Constructor called" << std::endl;
+	std::cout << "\t\t[FragTrap] Default Constructor called" << std::endl;
 	return;
 }
 
@@ -30,20 +30,20 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name) // explicitly calling a no
 	this->_health = _health_frag;
 	this->_energy = _energy_frag;
 	this->_attack = _attack_frag;
-	std::cout << "\t\tFragTrap String Constructor called" << std::endl;
+	std::cout << "\t\t[FragTrap] String Constructor called" << std::endl;
 	return;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "\t\tFragTrap Deconstructor called" << std::endl;
+	std::cout << "\t\t[FragTrap] Deconstructor called" << std::endl;
 	return;
 }
 
 FragTrap::FragTrap(const FragTrap& src)
 {
 	*this = src;
-	std::cout << "\t\tFragTrap Copy Constructor called" << std::endl;
+	std::cout << "\t\t[FragTrap] Copy Constructor called" << std::endl;
 	return;
 }
 
@@ -56,7 +56,7 @@ FragTrap&	FragTrap::operator=(const FragTrap& rhs)
 		this->_energy = rhs._energy;
 		this->_attack = rhs._attack;
 	}
-	std::cout << "\t\tFragTrap Copy Assigment Constructor called" << std::endl;
+	std::cout << "\t\t[FragTrap] Copy Assigment Constructor called" << std::endl;
 	return *this;
 }
 
@@ -77,7 +77,7 @@ void	FragTrap::attack(const std::string& target)
 	{
 		this->_energy--;
 		std::cout
-			<< "FragTrap "
+			<< "[FragTrap] "
 			<< this->_name
 			<< " attacks " << target
 			<< ", causing " << this->_attack
@@ -86,7 +86,7 @@ void	FragTrap::attack(const std::string& target)
 		return;
 	}
 	std::cout
-		<< "FragTrap "
+		<< "[FragTrap] "
 		<< this->_name
 		<< " has not enough power to attack." << std::endl;
 	return;

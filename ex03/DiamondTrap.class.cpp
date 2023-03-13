@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 17:57:18 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/13 09:21:50 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 13:08:28 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 // CONSTRUCTORS
 
-DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap(), _name("DiamondTrap")
+DiamondTrap::DiamondTrap() : _name("NoName")
 {
-	ClapTrap::_name = this->_name + "_clap_name";
+	ScavTrap::_name = this->_name + "_clap_name";
 	this->_health = FragTrap::_health_frag;
 	this->_energy = ScavTrap::_energy_scav;
 	this->_attack = FragTrap::_attack_frag;
@@ -27,7 +27,7 @@ DiamondTrap::DiamondTrap() : ClapTrap(), FragTrap(), ScavTrap(), _name("DiamondT
 
 DiamondTrap::DiamondTrap(std::string name) : _name(name) // explicitly calling a non default constructor of base class
 {
-	ClapTrap::_name = this->_name + "_clap_name";
+	ScavTrap::_name = this->_name + "_clap_name";
 	this->_health = FragTrap::_health_frag;
 	this->_energy = ScavTrap::_energy_scav;
 	this->_attack = FragTrap::_attack_frag;

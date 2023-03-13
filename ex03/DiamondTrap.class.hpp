@@ -6,7 +6,7 @@
 /*   By: vfuhlenb <vfuhlenb@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 17:49:11 by vfuhlenb          #+#    #+#             */
-/*   Updated: 2023/03/13 09:23:40 by vfuhlenb         ###   ########.fr       */
+/*   Updated: 2023/03/13 13:08:20 by vfuhlenb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap&	operator=(const DiamondTrap& rhs); // canonical Assigment Constructor
 		~DiamondTrap(); // canonical Destructor
 
-		void	whoAmI();
+		void		whoAmI();
+		using		FragTrap::attack;
 
 	private:
 
